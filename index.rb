@@ -11,7 +11,7 @@ while true
     puts "Press 2 to display a random group"
     puts "Press 3 to quit"
     
-    menu_input = gets.chomp
+    menu_input = gets.chomp.to_i
 
     case menu_input
     when 1
@@ -22,9 +22,14 @@ while true
         puts "Random group output: "
         # To do - output random group
     when 3
+        
         # To do - check they want to quit
         break
     else 
         puts "Invalid input please try again"
     end
+    sleep(3)
+    system "clear"
 end
+
+puts "Good-bye."
