@@ -3,7 +3,7 @@
 # choices 1, 2, 3.
 # case statement + while loop
 
-group = ["Alice", "Bob", "Charlie", "Dylan"]
+group = ["Alice", "Bob", "Charlie", "Dylan", "Ella"]
 
 while true
     puts "There are #{group.length} memebers in the group"
@@ -24,25 +24,24 @@ while true
         while random_order_loop_running
             copied_group = group.clone
             while copied_group.length > 0 
-                random_index = rand(copied_group.length -1)
+                random_index = rand(copied_group.length - 1)
                 puts copied_group[random_index].capitalize
                 copied_group.delete_at(random_index)
             end
             puts "Press 1 to repeat"
             puts "Press 2 to quit"
             choice = gets.chomp.to_i
-            if choice == 2
-                exit
-            end
+        if choice == 2
+            exit
         end
+    end
     when 3
-        
         # To do - check they want to quit
         break
     else 
         puts "Invalid input please try again"
     end
-    sleep(2)
+    sleep(1)
     system "clear"
 end
 
