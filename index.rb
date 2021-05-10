@@ -1,39 +1,23 @@
 require_relative("methods")
 
-group = ["Alice", "Bob", "Charlie", "Dylan", "Ella"]
+group = []
 # group = ["Alice"]
-
 while true
-    # Todo fix grammar
     output_group_size(group.length) # group is the array above on in program, length is the length of the array
-    puts "Press 1) to add a member to the group"
-    puts "Press 2) to display a random group"
-    puts "Press 3) to select random user"
-    puts "Press 4) to quit"
-    
-    #take input from user
-    menu_input = gets.chomp.to_i
+    #returns the menu method from methods.rb
+    case menu_input_select # menu method
 
-    case menu_input
     when 1
-        puts "Enter name: "
-        name = gets.chomp
-        group.push(name)
+        add_member_to_group(group) #connecting to methods
+        # bringing in group array to give method access
     when 2
         puts "Random group output: "
         random_order_loop_running = true
         while random_order_loop_running
-            # copied_group = group.clone
-            # while copied_group.length > 0 
-            #     random_index = rand(copied_group.length - 1)
-            #     puts copied_group[random_index].capitalize
-            #     copied_group.delete_at(random_index)
-            # end
 
-            # same as above
-            group.shuffle.each do |name|
-                puts name.capitalize
-            end
+            output_random_group_order(group) #passing the array into the method
+            # has potential to mutate so be careful
+            
             puts "Press 1 to go back"
             puts "Press 2 to quit"
             puts "Press any other key to regerate order of random group"

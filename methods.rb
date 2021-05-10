@@ -21,3 +21,18 @@ def menu_input_select
     # returns gets.chomp.to_i
     return menu_input
 end
+
+# pass in an arguement to link back to index.rb
+def output_random_group_order(collection) 
+    # group.shuffle.each bringing in collection as arguement
+    collection.shuffle.each do |name| # adding collection because arguement variable
+        puts name.capitalize
+    end
+end
+
+def add_member_to_group(arr) # linking back to index.rb
+    puts "Enter name: "
+    name = gets.chomp
+    arr.push(name) #passing in our group 'arr'
+    # pp arr #printing and seeing array
+end
