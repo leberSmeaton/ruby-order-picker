@@ -14,10 +14,8 @@ while true
         puts "Random group output: "
         random_order_loop_running = true
         while random_order_loop_running
-
             output_random_group_order(group) #passing the array into the method
-            # has potential to mutate so be careful
-            
+             # has potential to mutate so be careful        
             puts "Press 1 to go back"
             puts "Press 2 to quit"
             puts "Press any other key to regerate order of random group"
