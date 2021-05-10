@@ -1,15 +1,18 @@
-require_relative("methods")
+# create empty array
+# build menu system
+# choices 1, 2, 3.
+# case statement + while loop
 
-group = ["Alice", "Bob", "Charlie", "Dylan", "Ella"]
-# group = ["Alice"]
+# group = ["Alice", "Bob", "Charlie", "Dylan", "Ella"]
+group = ["Alice"]
 
 while true
     # Todo fix grammar
-    output_group_size(group.length) # group is the array above on in program, length is the length of the array
-    puts "Press 1) to add a member to the group"
-    puts "Press 2) to display a random group"
-    puts "Press 3) to select random user"
-    puts "Press 4) to quit"
+    puts "There are #{group.length == 1 ? '1 member': group.length.to_s + ' members'} in the group"
+    puts "Press 1 to add a member to the group"
+    puts "Press 2 to display a random group"
+    puts "Press 3 to select random user"
+    puts "Press 4 to quit"
     
     #take input from user
     menu_input = gets.chomp.to_i
