@@ -17,4 +17,28 @@ describe 'Group' do # everytest in this is related to group class
         expect(@group.names_array).to be_an_instance_of(Array)
         # I expect the group method names_array to be an instance of Array
     end
+
+    describe '.randomise_order' do
+        it 'should be defined' do
+            expect(defined? @group.randomise_order).to eq("method")
+        end
+
+        it 'should return an Array' do
+            expect(@group.randomise_order).to be_an_instance_of(Array)
+        end
+
+        it 'should return an array that contains all items in @names_array' do
+            expect(@group.randomise_order).to include(*@group.names_array)
+        end
+
+        describe '.output_random_array' do
+            it 'should be defined' do
+                expect(defined? @group.output_random_array).to eq("method")
+            end
+
+            it 'should output a name from the @names_array' do
+                expect(@group.output_random_array).to output(/#{Regexp.quote(@group.names_array.sample)}/).to_stdout #going to output at least one name from the array
+            end
+        end
+    end
 end
