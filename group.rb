@@ -13,4 +13,18 @@ class Group
     def randomise_order
         return @names_array.shuffle
     end
+
+    def output_random_array
+        randomise_order.each do |name|
+            puts name
+        end
+    end
+
+    def add_name(name)
+        @names_array.push(name)
+    end
 end
+
+# testing if this works
+# example = Group.new("Example")
+# example.output_random_array

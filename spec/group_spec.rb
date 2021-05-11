@@ -37,7 +37,18 @@ describe 'Group' do # everytest in this is related to group class
             end
 
             it 'should output a name from the @names_array' do
-                expect(@group.output_random_array).to output(/#{Regexp.quote(@group.names_array.sample)}/).to_stdout #going to output at least one name from the array
+                expect{@group.output_random_array}.to output(/#{Regexp.quote(@group.names_array.sample)}/).to_stdout #going to output at least one name from the array
+                #see squiggly brackets for testing output
+            end
+        end
+
+        describe '.add_name' do
+            it 'should be defined' do
+                expect(defined? @group.add_name).to eq("method")
+            end
+            it 'should increase @names_array by one' do
+                length = @group.names_array.length
+                expect(@group.add_name("Bob").length).to be(length + 1)
             end
         end
     end
