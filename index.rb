@@ -1,7 +1,36 @@
-require_relative("methods")
+# https://github.com/CoderAcademy-ALL/ruby-order-picker
 
-group = []
+
+require_relative("methods")
+# require("colorize")
+
+# group = ["Alice", "Bob", "Charlie"]
 # group = ["Alice"]
+group = %w[Aaron
+    Angie
+    Bella
+    Cathy
+    Celine
+    Clare
+    Daniel
+    Ellie
+    Jasmine
+    Jason
+    June
+    Luke
+    Matthew
+    Mie
+    Mitchell
+    Nam
+    Natacha
+    Ray
+    Stefano
+    Tash
+    Thang
+    Vivien
+    Winny]
+
+
 while true
     output_group_size(group.length) # group is the array above on in program, length is the length of the array
     #returns the menu method from methods.rb

@@ -1,5 +1,8 @@
 # conencted to index.rb
 # defining the method 
+require("colorize") # adding gems to methods
+require "espeak" # adding gems to methods
+
 def output_group_size(length) # length is the placeholder
     # if else or case statement is an option
     if length == 1
@@ -25,11 +28,18 @@ end
 # pass in an arguement to link back to index.rb
 def output_random_group_order(collection) 
     # group.shuffle.each bringing in collection as arguement
-    collection.shuffle.each do |name| # adding collection because arguement variable
-        puts capitalize_multi_word_string(name)
+    collection.shuffle.each_with_index do |name, index| # adding collection because arguement variable
+        puts "#{index +1}. #{capitalize_multi_word_string(name)}".colorize(select_random_color)
         # we're calling above and linking to bottom captialize_multi_word_string method instead of...
         # puts name.capitalize 
+        sleep(1) # wait until
+        ESpeak::Speech.new(name).speak #takes in a string, the name. takes a speech object
     end
+end
+
+def select_random_color
+    colours = String.colors.dup - [:black, :light_black]
+    return colours.sample
 end
 
 # output_random_group_order(["tony hawk", "the rock", "someone cool"])
