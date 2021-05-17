@@ -38,6 +38,12 @@ class Group
         return array
     end
 
+    def save
+        File.open(@path, "w+") do |file|
+            file.puts(@names_array)
+        end
+    end
+
     private #private method no one can see
     def get_file_path
         @path
@@ -50,6 +56,11 @@ end
 # example.output_random_array
 
 # Another way of input output
-test_group = Group.new("Test Group", './groups/test-group.txt')
 # test_group = Group.new("Test Group", './groups/test-group.txt')
-test_group.output_random_array
+# # test_group = Group.new("Test Group", './groups/test-group.txt')
+# test_group.output_random_array
+
+## manual test to add names into a group
+# test_group = Group.new("test group", "./groups/test-group.txt")
+# test_group.add_name("Bob Smith")
+# test_group.save
